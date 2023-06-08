@@ -94,7 +94,7 @@ def prepare_mc_data(PATH):
         data = json.load(f)
     MC_data_for_gen = []
     for j, d in enumerate(data):
-        if LABEL_TO_ID[d['relation']] in MINOR_LABELS:
+        if d['relation'] in MINOR_LABELS:
             temp = {}
             temp['line_idx'] = j
             temp['h'] = {'pos': [d['subj_start'], d['subj_end']], 'name': ' ' .join([d['token'][i] for i in range(d['subj_start'], d['subj_end']+1)])}
